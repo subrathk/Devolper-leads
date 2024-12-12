@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Scrolling Logos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Styling for blue line beside the title */
+    .section-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; /* Space between line and text */
+      margin-bottom: 20px;
+    }
+
+    .blue-line {
+      width: 5px;
+      height: 40px; /* Matches height of the title */
+      background-color: #007bff; /* Bootstrap primary blue color */
+    }
+
+    .section-title {
+      font-weight: bold;
+      color: #333;
+      margin: 0; /* Removes extra margin */
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    /* Common styling for logo container */
+    .logo-scroll-container {
+      overflow: hidden; /* Hide overflow content */
+      border: 2px solid #ffffff;
+      position: relative;
+    }
+
+    .logo-grid {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .logo-grid img {
+      max-width: 250px; /* Default max width */
+      max-height: 280px; /* Default max height */
+      object-fit: fill; /* Ensures proper aspect ratio */
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .logo-grid img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Horizontal scroll animation for desktop */
+    @keyframes horizontal-scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Vertical scroll animation for mobile */
+    @keyframes vertical-scroll {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Desktop layout: single-row horizontal scroll */
+    @media (min-width: 768px) {
+      .logo-scroll-container {
+        height: 250px; /* Adjusted height to match the row size */
+        padding-bottom: 0; /* No extra padding */
+      }
+
+      .logo-grid {
+        animation: horizontal-scroll 15s linear infinite; /* Horizontal auto-scroll */
+      }
+
+      .logo-grid img {
+        max-width: 250px; /* Increase size of logos in desktop view */
+        max-height: 250px; /* Larger height for desktop view */
+        
+    }
+
+      .logo-grid > * {
+        flex-shrink: 0; /* Prevent shrinking */
+      }
+    }
+
+    /* Mobile layout: two-row vertical scroll */
+    @media (max-width: 768px) {
+      .logo-scroll-container {
+        height: 300px; /* Adjust height for mobile */
+      }
+
+      .logo-grid {
+        flex-wrap: wrap; /* Wrap logos into rows */
+        animation: vertical-scroll 15s linear infinite; /* Vertical auto-scroll */
+      }
+
+      .logo-grid > div {
+        flex: 1 1 45%; /* Two logos per row */
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <!-- Section Title -->
+  <div class="text-center mb-4">
+    <div class="section-title-container">
+      <div class="blue-line"></div>
+      <h2 class="section-title">The Leading Developers EHE Deals With</h2>
+    </div>
+    <p class="subtitle">Explore Our Esteemed Collaborators and Formidable Partnerships, Forging the Path to Success Together.</p>
+  </div>
+
+  <!-- Logo Scroll Section -->
+  <div class="logo-scroll-container">
+    <div class="logo-grid">
+      <!-- Logos (duplicated for seamless scroll) -->
+      <div><img src="images/Adani_2012logo.png" alt="Adani" > </div>
+      <div><img src="images/spaze.png" alt="Spaze" ></div>
+      <div><img src="images/Vatika_logo.jpeg" alt="Vatika"></div>
+      <div><img src="images/Central_Park_Gurgaon_Logo.jpg" alt="Centralpark"></div>
+      <div><img src="images/godrej_logo.png" alt="Godrej"></div>
+      <div><img src="images/M3M.png" alt="M3M"></div>
+      <div><img src="images/Ameya-Logo.png" alt="Ameya"></div>
+      <div><img src="images/AILP.jpg" alt="AILP"></div>
+      <div><img src="images/DLF.png" alt="DLF"></div>
+
+      <!-- Duplicate for seamless scroll -->
+      <div><img src="images/Adani_2012logo.png" alt="Adani"></div>
+      <div><img src="images/spaze.png" alt="Spaze"  ></div>
+      <div><img src="images/Vatika_logo.jpeg" alt="Vatika"></div>
+      <div><img src="images/Central_Park_Gurgaon_Logo.jpg" alt="Centralpark"></div>
+      <div><img src="images/godrej_logo.png" alt="Godrej"></div>
+      <div><img src="images/M3M.png" alt="M3M"></div>
+      <div><img src="images/Ameya-Logo.png" alt="Ameya"></div>
+      <div><img src="images/AILP.jpg" alt="AILP"></div>
+      <div><img src="images/DLF.png" alt="DLF"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
