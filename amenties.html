@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 160px;
+            object-fit: cover;
+        }
+
+        /* Hide extra cards for mobile (show 5 cards initially) */
+        @media (max-width: 768px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+
+        /* Hide extra cards for laptop (show 6 cards initially) */
+        @media (min-width: 992px) {
+            .hidden-laptop {
+                display: none;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+            <h2 class="fw-bold"> Amenities</h2>
+        </div>
+
+        <!-- Amenities Grid -->
+        <div class="row g-4">
+            <!-- First 6 Cards -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/jogging track.jpg" alt="Jogging Track" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Jogging Track</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/yoga2.jpg" alt="Yoga & Meditation Area" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Yoga & Meditation Area</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/garden.jpg" alt="Garden" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Garden</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/swimming pool2.jpg" alt="Swimming Pool" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Swimming Pool</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/security.jpg" alt="24x7 Security" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">24x7 Security</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 hidden-mobile">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/gym.jpg" alt="Gym" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Gym</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Cards for Both Laptop and Mobile -->
+            <div class="col-sm-6 col-lg-4 hidden-mobile hidden-laptop">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/kids play area.jpg" alt="Kids Play Area" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Kids Play Area</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 hidden-mobile hidden-laptop">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/club house.jpg" alt="Club House" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Club House</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 hidden-mobile hidden-laptop">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/court2.jpg" alt="court" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">court</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 hidden-mobile hidden-laptop">
+                <div class="card shadow-sm h-100 border-0">
+                    <img src="images/parking.jpg" alt="Parking Area" class="card-img-top rounded-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold mb-0">Parking Area</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show More Button -->
+        <div class="text-center mt-4">
+            <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const hiddenMobileCards = document.querySelectorAll('.hidden-mobile');
+        const hiddenLaptopCards = document.querySelectorAll('.hidden-laptop');
+
+        showMoreBtn.addEventListener('click', () => {
+            hiddenMobileCards.forEach(card => card.classList.toggle('hidden-mobile'));
+            hiddenLaptopCards.forEach(card => card.classList.toggle('hidden-laptop'));
+            showMoreBtn.textContent = showMoreBtn.textContent === 'Show More' ? 'Show Less' : 'Show More';
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
